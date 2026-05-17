@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net4.7.2</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Guna.UI2" Version="2.0.0.2" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRMS.Entity\CRMS.Entity.csproj" />
+    <ProjectReference Include="..\CRMS.DataAccess\CRMS.DataAccess.csproj" />
+    <ProjectReference Include="..\CRMS.Business\CRMS.Business.csproj" />
+    <ProjectReference Include="..\CRMS.Common\CRMS.Common.csproj" />
+  </ItemGroup>
+
+</Project>
