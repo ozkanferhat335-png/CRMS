@@ -139,14 +139,23 @@ namespace CRMS.Business.Services
                 FirstName = customer.FirstName,
                 LastName = customer.LastName,
                 CompanyName = customer.CompanyName,
+                TaxNumber = customer.TaxNumber,
                 Email = customer.Email,
                 PhoneNumber = customer.PhoneNumber,
                 Address = customer.Address,
                 City = customer.City,
                 Country = customer.Country,
+                Website = customer.Website,
+                CustomerType = customer.CustomerType,
                 Status = customer.Status,
                 Rating = customer.Rating,
-                CreatedDate = customer.CreatedDate
+                Notes = customer.Notes,
+                LastContactDate = customer.LastContactDate,
+                NextContactDate = customer.NextContactDate,
+                CreatedDate = customer.CreatedDate,
+                ModifiedDate = customer.ModifiedDate,
+                CreatedByUserId = customer.CreatedByUserId,
+                ModifiedByUserId = customer.ModifiedByUserId
             };
         }
     }

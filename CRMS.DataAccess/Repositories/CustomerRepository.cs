@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using CRMS.Entity.Models;
 
 namespace CRMS.DataAccess.Repositories
@@ -210,7 +211,7 @@ namespace CRMS.DataAccess.Repositories
                 Website = reader["Website"]?.ToString() ?? string.Empty,
                 CustomerType = reader["CustomerType"]?.ToString() ?? string.Empty,
                 Status = reader["Status"]?.ToString() ?? "Active",
-                Rating = (double)reader["Rating"],
+                Rating = reader["Rating"] != DBNull.Value ? (decimal)(double)reader["Rating"] : 0m,
                 Notes = reader["Notes"]?.ToString() ?? string.Empty,
                 LastContactDate = reader["LastContactDate"] != DBNull.Value ? DateTime.Parse(reader["LastContactDate"].ToString()) : (DateTime?)null,
                 NextContactDate = reader["NextContactDate"] != DBNull.Value ? DateTime.Parse(reader["NextContactDate"].ToString()) : (DateTime?)null,

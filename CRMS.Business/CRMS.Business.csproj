@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CRMS.Entity\CRMS.Entity.csproj" />
     <ProjectReference Include="..\CRMS.DataAccess\CRMS.DataAccess.csproj" />
+    <ProjectReference Include="..\CRMS.Common\CRMS.Common.csproj" />
   </ItemGroup>
 
 </Project>
