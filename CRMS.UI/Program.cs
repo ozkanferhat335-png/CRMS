@@ -4,6 +4,7 @@ using CRMS.DataAccess;
 using CRMS.DataAccess.Repositories;
 using CRMS.Business.Services;
 using CRMS.Common.Configuration;
+using CRMS.Entity.DTOs;
 
 namespace CRMS.UI
 {
@@ -42,16 +43,5 @@ namespace CRMS.UI
                 MessageBox.Show($"Uygulama başlatılırken hata: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
-
-    public class UserDTO
-    {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
-        public DateTime LastLoginDate { get; set; }
     }
 }

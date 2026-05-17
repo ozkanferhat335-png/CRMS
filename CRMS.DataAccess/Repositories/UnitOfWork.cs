@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
 using CRMS.Entity.Models;
 
 namespace CRMS.DataAccess.Repositories
@@ -16,6 +14,10 @@ namespace CRMS.DataAccess.Repositories
         private OfferRepository _offerRepository;
         private TicketRepository _ticketRepository;
         private LogRepository _logRepository;
+        private MeetingRepository _meetingRepository;
+        private NotificationRepository _notificationRepository;
+        private EventRepository _eventRepository;
+        private SettingsRepository _settingsRepository;
 
         public UnitOfWork(string connectionString)
         {
@@ -102,10 +104,49 @@ namespace CRMS.DataAccess.Repositories
             }
         }
 
+        public MeetingRepository Meetings
+        {
+            get
+            {
+                if (_meetingRepository == null)
+                    _meetingRepository = new MeetingRepository(_connectionString);
+                return _meetingRepository;
+            }
+        }
+
+        public NotificationRepository Notifications
+        {
+            get
+            {
+                if (_notificationRepository == null)
+                    _notificationRepository = new NotificationRepository(_connectionString);
+                return _notificationRepository;
+            }
+        }
+
+        public EventRepository Events
+        {
+            get
+            {
+                if (_eventRepository == null)
+                    _eventRepository = new EventRepository(_connectionString);
+                return _eventRepository;
+            }
+        }
+
+        public SettingsRepository Settings
+        {
+            get
+            {
+                if (_settingsRepository == null)
+                    _settingsRepository = new SettingsRepository(_connectionString);
+                return _settingsRepository;
+            }
+        }
+
         public void SaveChanges()
         {
-            // In this implementation, changes are saved immediately
-            // In a real scenario, you'd implement transaction handling here
+            // Changes are saved immediately per operation
         }
 
         public void Dispose()
